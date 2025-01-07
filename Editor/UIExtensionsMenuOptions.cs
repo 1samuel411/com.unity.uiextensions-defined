@@ -2,7 +2,9 @@
 #define NEW_INPUT_SYSTEM
 #endif
 
+#if TMP_PRESENT
 using TMPro;
+#endif
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -2217,9 +2219,15 @@ namespace UnityEditor.UI
 			RectTransform minHandleTextRect = SetAnchorsAndStretch(minHandleText);
 			minHandleTextRect.sizeDelta = new Vector2(70, 50);
 			minHandleTextRect.anchoredPosition = new Vector3(0, 60, 0);
+			
+#if TMP_PRESENT
 			TextMeshProUGUI minHandleTextComponent = minHandleText.AddComponent<TextMeshProUGUI>();
-			minHandleTextComponent.fontSize = 36;
 			minHandleTextComponent.alignment = TextAlignmentOptions.Center;
+#else
+			Text minHandleTextComponent = minHandleText.AddComponent<Text>();
+			minHandleTextComponent.alignment = TextAnchor.MiddleCenter;
+#endif
+			minHandleTextComponent.fontSize = 36;
 
 
 			RectTransform maxHandleRect = SetAnchorsAndStretch(maxHandle);
@@ -2235,9 +2243,14 @@ namespace UnityEditor.UI
 			RectTransform maxHandleTextRect = SetAnchorsAndStretch(maxHandleText);
 			maxHandleTextRect.sizeDelta = new Vector2(70, 50);
 			maxHandleTextRect.anchoredPosition = new Vector3(0, 60, 0);
+#if TMP_PRESENT
 			TextMeshProUGUI maxHandleTextComponent = maxHandleText.AddComponent<TextMeshProUGUI>();
-			maxHandleTextComponent.fontSize = 36;
 			maxHandleTextComponent.alignment = TextAlignmentOptions.Center;
+#else
+			Text maxHandleTextComponent = maxHandleText.AddComponent<Text>();
+			maxHandleTextComponent.alignment = TextAnchor.MiddleCenter;
+#endif
+			maxHandleTextComponent.fontSize = 36;
 
 			MinMaxSlider minMaxSlider = minMaxSliderRoot.AddComponent<MinMaxSlider>();
 			minMaxSlider.SliderBounds = sliderBoundsRect;

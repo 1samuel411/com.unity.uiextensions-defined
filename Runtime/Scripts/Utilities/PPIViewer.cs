@@ -6,7 +6,7 @@ Simply place the script on A Text control in the scene to display the current PP
 
 namespace UnityEngine.UI.Extensions
 {
-#if UNITY_2022_1_OR_NEWER
+#if UNITY_2022_1_OR_NEWER && TMP_PRESENT
     [RequireComponent(typeof(TMPro.TMP_Text))]
 #else
     [RequireComponent(typeof(Text))]
@@ -14,7 +14,7 @@ namespace UnityEngine.UI.Extensions
     [AddComponentMenu("UI/Extensions/PPIViewer")]
     public class PPIViewer : MonoBehaviour
     {
-#if UNITY_2022_1_OR_NEWER
+#if UNITY_2022_1_OR_NEWER && TMP_PRESENT
         private TMPro.TMP_Text label;
 #else
         private Text label;
@@ -22,7 +22,7 @@ namespace UnityEngine.UI.Extensions
 
         void Awake()
         {
-#if UNITY_2022_1_OR_NEWER
+#if UNITY_2022_1_OR_NEWER && TMP_PRESENT
             label = GetComponentInChildren<TMPro.TMP_Text>();
 #else
             label = GetComponentInChildren<Text>();

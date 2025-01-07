@@ -5,7 +5,7 @@
 namespace UnityEngine.UI.Extensions.ColorPicker
 {
 
-#if UNITY_2022_1_OR_NEWER
+#if UNITY_2022_1_OR_NEWER && TMP_PRESENT
     [RequireComponent(typeof(TMPro.TMP_Text))]
 #else
     [RequireComponent(typeof(Text))]
@@ -22,14 +22,14 @@ namespace UnityEngine.UI.Extensions.ColorPicker
 
         public int precision = 0;
 
-#if UNITY_2022_1_OR_NEWER
+#if UNITY_2022_1_OR_NEWER && TMP_PRESENT
         private TMPro.TMP_Text label;
 #else
         private Text label;
 #endif
         private void Awake()
         {
-#if UNITY_2022_1_OR_NEWER
+#if UNITY_2022_1_OR_NEWER && TMP_PRESENT
             label = GetComponent<TMPro.TMP_Text>();
 #else
             label = GetComponent<Text>();

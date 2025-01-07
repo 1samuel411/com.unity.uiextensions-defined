@@ -16,7 +16,7 @@ namespace UnityEngine.UI.Extensions {
     [AddComponentMenu("UI/Extensions/TextPic")]
        
     [ExecuteInEditMode] // Needed for culling images that are not used //
-#if UNITY_2022_1_OR_NEWER
+#if UNITY_2022_1_OR_NEWER && TMP_PRESENT
     public class TextPic : TMPro.TMP_Text, IPointerClickHandler, IPointerExitHandler, IPointerEnterHandler, ISelectHandler
 #else
     public class TextPic : Text, IPointerClickHandler, IPointerExitHandler, IPointerEnterHandler, ISelectHandler

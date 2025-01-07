@@ -209,7 +209,7 @@ namespace UnityEngine.UI.Extensions
                 if (minDistance == distance[i])
                 {
                     FocusedElementIndex = i;
-#if UNITY_2022_1_OR_NEWER
+#if UNITY_2022_1_OR_NEWER && TMP_PRESENT
                     var textComponentTxtMeshPro = arrayOfElements[i].GetComponentInChildren<TMPro.TMP_Text>();
                     if (textComponentTxtMeshPro != null)
                     {

@@ -4,7 +4,7 @@
 namespace UnityEngine.UI.Extensions
 {
     [RequireComponent(typeof(RectTransform))]
-#if UNITY_2022_1_OR_NEWER
+#if UNITY_2022_1_OR_NEWER && TMP_PRESENT
     [RequireComponent(typeof(TMPro.TMP_Text))]
 #else
     [RequireComponent(typeof(Text))]
@@ -16,7 +16,7 @@ namespace UnityEngine.UI.Extensions
         {
             if (uiGraphic == null)
             {
-#if UNITY_2022_1_OR_NEWER
+#if UNITY_2022_1_OR_NEWER && TMP_PRESENT
                 uiGraphic = GetComponent<TMPro.TMP_Text>();
 #else
                 uiGraphic = GetComponent<Text>();

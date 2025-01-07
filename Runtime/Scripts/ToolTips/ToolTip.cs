@@ -27,7 +27,7 @@ namespace UnityEngine.UI.Extensions
     public class ToolTip : MonoBehaviour
     {
         //text of the tooltip
-#if UNITY_2022_1_OR_NEWER
+#if UNITY_2022_1_OR_NEWER && TMP_PRESENT
         private TMPro.TMP_Text _text;
 #else
         private Text _text;
@@ -124,7 +124,7 @@ namespace UnityEngine.UI.Extensions
             canvasRectTransform = canvas.GetComponent<RectTransform>();
             _layoutGroup = GetComponentInChildren<LayoutGroup>();
 
-#if UNITY_2022_1_OR_NEWER
+#if UNITY_2022_1_OR_NEWER && TMP_PRESENT
             _text = GetComponentInChildren<TMPro.TMP_Text>();
 #else
             _text = GetComponentInChildren<Text>();

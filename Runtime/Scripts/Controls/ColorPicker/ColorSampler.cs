@@ -33,7 +33,7 @@ namespace UnityEngine.UI.Extensions.ColorPicker
 
 		protected virtual void OnEnable()
 		{
-			screenCapture = ScreenCapture.CaptureScreenshotAsTexture();
+			//screenCapture = ScreenCapture.CaptureScreenshotAsTexture();
             sampleRectTransform = sampler.GetComponent<RectTransform>();
             sampler.gameObject.SetActive(true);
 			sampler.onClick.AddListener(SelectColor);

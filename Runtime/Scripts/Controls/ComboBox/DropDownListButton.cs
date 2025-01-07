@@ -8,7 +8,7 @@ namespace UnityEngine.UI.Extensions
     {
         public RectTransform rectTransform;
         public Button btn;
-#if UNITY_2022_1_OR_NEWER
+#if UNITY_2022_1_OR_NEWER && TMP_PRESENT
         public TMPro.TMP_Text txt;
 #else
         public Text txt;
@@ -23,7 +23,7 @@ namespace UnityEngine.UI.Extensions
             rectTransform = btnObj.GetComponent<RectTransform>();
             btnImg = btnObj.GetComponent<Image>();
             btn = btnObj.GetComponent<Button>();
-#if UNITY_2022_1_OR_NEWER
+#if UNITY_2022_1_OR_NEWER && TMP_PRESENT
             txt = rectTransform.Find("Text").GetComponent<TMPro.TMP_Text>();
 #else
             txt = rectTransform.Find("Text").GetComponent<Text>();

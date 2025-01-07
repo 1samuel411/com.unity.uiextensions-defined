@@ -40,7 +40,7 @@ namespace UnityEngine.UI.Extensions
         //We want the test object to be either a UI element, a 2D element or a 3D element, so we'll get the appropriate components
         SpriteRenderer spriteRenderer;
         Image image;
-#if UNITY_2022_1_OR_NEWER
+#if UNITY_2022_1_OR_NEWER && TMP_PRESENT
         TMPro.TMP_Text text;
 #else
         Text text;
@@ -50,7 +50,7 @@ namespace UnityEngine.UI.Extensions
         {
             spriteRenderer = transform.GetComponent<SpriteRenderer>();
             image = transform.GetComponent<Image>();
-#if UNITY_2022_1_OR_NEWER
+#if UNITY_2022_1_OR_NEWER && TMP_PRESENT
             text = transform.GetComponent<TMPro.TMP_Text>();
 #else
             text = transform.GetComponent<Text>();

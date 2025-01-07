@@ -11,7 +11,7 @@ namespace UnityEngine.UI.Extensions
         public int verticalPadding;
 
         //tooltip text
-#if UNITY_2022_1_OR_NEWER
+#if UNITY_2022_1_OR_NEWER && TMP_PRESENT
         public TMPro.TMP_Text thisText;
 #else
         public Text thisText;

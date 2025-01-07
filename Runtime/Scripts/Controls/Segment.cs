@@ -203,7 +203,7 @@ namespace UnityEngine.UI.Extensions
 
         void ChangeTextColor(Color targetColor)
         {
-#if UNITY_2022_1_OR_NEWER
+#if UNITY_2022_1_OR_NEWER && TMP_PRESENT
             var text = GetComponentInChildren<TMPro.TMP_Text>();
 #else
             var text = GetComponentInChildren<Text>();

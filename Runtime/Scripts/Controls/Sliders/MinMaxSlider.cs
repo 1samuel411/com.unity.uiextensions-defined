@@ -2,7 +2,9 @@
 ///Sourced from - https://github.com/brogan89/MinMaxSlider
 
 using System;
+#if TMP_PRESENT
 using TMPro;
+#endif
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
@@ -28,8 +30,13 @@ namespace UnityEngine.UI.Extensions
 
         // text components (optional)
         [Header("Display Text (Optional)")]
+#if TMP_PRESENT
         [SerializeField] private TextMeshProUGUI minText = null;
         [SerializeField] private TextMeshProUGUI maxText = null;
+#else
+        [SerializeField] private Text minText = null;
+        [SerializeField] private Text maxText = null;
+#endif
         [SerializeField] private string textFormat = "0";
 
         // values
@@ -48,9 +55,13 @@ namespace UnityEngine.UI.Extensions
         public RectTransform MinHandle { get => minHandle; set => minHandle = value; }
         public RectTransform MaxHandle { get => maxHandle; set => maxHandle = value; }
         public RectTransform MiddleGraphic { get => middleGraphic; set => middleGraphic = value; }
+#if TMP_PRESENT
         public TextMeshProUGUI MinText { get => minText; set => minText = value; }
         public TextMeshProUGUI MaxText { get => maxText; set => maxText = value; }
-
+#else
+        public Text MinText { get => minText; set => minText = value; }
+        public Text MaxText { get => maxText; set => maxText = value; }
+#endif
         /// <summary>
         /// Event invoked when either slider value has changed
         /// <para></para>
@@ -144,12 +155,12 @@ namespace UnityEngine.UI.Extensions
         {
             if (minText)
             {
-                minText.SetText(minValue.ToString(textFormat));
+                minText.text = (minValue.ToString(textFormat));
             }
 
             if (maxText)
             {
-                maxText.SetText(maxValue.ToString(textFormat));
+                maxText.text = (maxValue.ToString(textFormat));
             }
         }
 
